@@ -6,7 +6,18 @@ const Shoes = () => {
   return (
     <div>
       {shoes.map((product) => {
-        return product.name;
+        return product.gender == "MEN" ? (
+          <div>
+            <li key={product.id}>{product.name}</li>
+            <li>{product.price}</li>
+            <li>{product.category}</li>
+            <li>{product.gender}</li>
+            <li>{product.brand}</li>
+            <img src={product.imageURL} alt="name" />
+          </div>
+        ) : (
+          <div></div>
+        );
       })}
     </div>
   );
