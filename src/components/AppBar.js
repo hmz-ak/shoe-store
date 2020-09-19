@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Men from "./Men";
 import Women from "./Women";
 import Kids from "./Kids";
+import Home from "./Home";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,10 +41,17 @@ export default function DenseAppBar() {
           <Toolbar>
             <Grid justify={"space-between"} container>
               <Grid xs={1} item>
-                <img className={classes.logo} src={nike} />
+                <Link className={classes.links} to="/">
+                  <img className={classes.logo} src={nike} />
+                </Link>
               </Grid>
               <Grid xs={4} item>
                 <Grid container justify={"center"}>
+                  <Typography variant="h6" className={classes.typography}>
+                    <Link className={classes.links} to="/">
+                      HOME
+                    </Link>
+                  </Typography>
                   <Typography variant="h6" className={classes.typography}>
                     <Link className={classes.links} to="men">
                       MEN
@@ -66,7 +74,9 @@ export default function DenseAppBar() {
           </Toolbar>
         </AppBar>
       </div>
+
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="men" element={<Men />} />
         <Route path="women" element={<Women />} />
         <Route path="kids" element={<Kids />} />
