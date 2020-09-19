@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
   mystyle: {
     marginTop: "10px",
     marginBottom: "10px",
-    height: "450px",
+    height: "490px",
   },
 }));
 
