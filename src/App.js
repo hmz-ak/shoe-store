@@ -3,15 +3,13 @@ import ShoeContextProvider from "./context/ShoeContext";
 import Shoes from "./components/Shoes";
 import "./App.css";
 import AppBar from "./components/AppBar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div>
-      <ShoeContextProvider>
-        <AppBar />
-        <Shoes />
-      </ShoeContextProvider>
-    </div>
+    <ShoeContextProvider>
+      <AppBar />
+    </ShoeContextProvider>
   );
 }
 
