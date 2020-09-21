@@ -6,6 +6,7 @@ import GridListTile from "@material-ui/core/GridListTile";
 import GridListTileBar from "@material-ui/core/GridListTileBar";
 import IconButton from "@material-ui/core/IconButton";
 import StarBorderIcon from "@material-ui/icons/StarBorder";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,18 +42,20 @@ const Women = () => {
           tile.gender == "WOMEN" ? (
             <GridListTile key={tile.id}>
               <img src={tile.imageURL} alt={tile.name} />
-              <GridListTileBar
-                title={tile.name}
-                classes={{
-                  root: classes.titleBar,
-                  title: classes.title,
-                }}
-                actionIcon={
-                  <IconButton aria-label={`star ${tile.name}`}>
-                    <StarBorderIcon className={classes.title} />
-                  </IconButton>
-                }
-              />
+              <Link to={`/women/${tile.id}`} className={classes.linkItem}>
+                <GridListTileBar
+                  title={tile.name}
+                  classes={{
+                    root: classes.titleBar,
+                    title: classes.title,
+                  }}
+                  actionIcon={
+                    <IconButton aria-label={`star ${tile.name}`}>
+                      <StarBorderIcon className={classes.title} />
+                    </IconButton>
+                  }
+                />
+              </Link>
             </GridListTile>
           ) : null
         )}

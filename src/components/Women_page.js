@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,12 +28,14 @@ const Women_Page = () => {
             return shoe.gender == "WOMEN" ? (
               <Grid item xs={12} sm={6} md={4} key={ind}>
                 <Paper elevation={3} className={classes.paper}>
-                  <img
-                    src={shoe.imageURL}
-                    style={{ width: "100%", height: "350px" }}
-                    alt={shoe.name}
-                  />
-                  <p className={classes.productName}>{shoe.name}</p>
+                  <Link to={`/women/${shoe.id}`} className={classes.linkItem}>
+                    <img
+                      src={shoe.imageURL}
+                      style={{ width: "100%", height: "350px" }}
+                      alt={shoe.name}
+                    />
+                    <p className={classes.productName}>{shoe.name}</p>
+                  </Link>
                 </Paper>
               </Grid>
             ) : null;

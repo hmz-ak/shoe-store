@@ -25,6 +25,8 @@ function App() {
           <Route path="women" element={<Women_Page />} />
           <Route path="kids" element={<Kids_Page />} />
           <Route path="men/:id" element={<Shoe_detail />} />
+          <Route path="women/:id" element={<Shoe_detail />} />
+          <Route path="kids/:id" element={<Shoe_detail />} />
         </Routes>
 
         <Footer />
